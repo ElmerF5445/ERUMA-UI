@@ -237,6 +237,8 @@ function Startup_Page_ApplyConfigurations(Mode, Parameter) {
         App_PageNavigation_Element_Anchor.innerHTML = App_PageNavigation_Element_HTML;
         document.getElementById("Header_PageNavigation_Menu_Links").appendChild(App_PageNavigation_Element_Anchor);
       }
+    } else {
+      Element_Get_ByQuery(".Header_PageNavigation_Menu_Content").style.display = "none";
     }
     // Generates PageAction buttons
     document.getElementById("Header_PageActions_Menu_Links").innerHTML = "";
@@ -260,6 +262,8 @@ function Startup_Page_ApplyConfigurations(Mode, Parameter) {
         App_PageAction_Element_Anchor.innerHTML = App_PageAction_Element_HTML;
         document.getElementById("Header_PageActions_Menu_Links").appendChild(App_PageAction_Element_Anchor);
       }
+    } else {
+      Element_Get_ByQuery(".Header_PageNavigation_Menu_Content").style.display = "none";
     }
 
     if (App_Property.Features.StatusBar == true || App_Property.Features.ClockScreen == true){

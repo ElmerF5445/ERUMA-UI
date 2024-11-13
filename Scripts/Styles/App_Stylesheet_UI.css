@@ -766,7 +766,7 @@ body{
 }
 
 .Ribbon[Style_Margin_Header="Enabled"]{
-	top: 42px
+	top: 43px
 }
 
 .Ribbon_Section{
@@ -1144,13 +1144,16 @@ body{
 
 .Accordion_Title_Arrow{
     width: 20px;
+	transform: rotate(180deg);
 }
 
-.Accordion_Title_Arrow[State="Collapsed"]{
+.Accordion_Title_Arrow[State="Collapsed"], .Accordion[State="Collapsed"] >
+.Accordion_Title > .Accordion_Title_Arrow{
     transform: rotate(0deg);
 }
 
-.Accordion_Title_Arrow[State="Expanded"]{
+.Accordion_Title_Arrow[State="Expanded"], .Accordion[State="Expanded"] >
+.Accordion_Title > .Accordion_Title_Arrow{
     transform: rotate(180deg);
 }
 
@@ -1164,11 +1167,13 @@ body{
     /* background-color: aqua; */
 }
 
-.Accordion_Content[State="Expanded"]{
+.Accordion_Content[State="Expanded"], .Accordion[State="Expanded"] >
+.Accordion_Content{
     max-height: 100%;
 }
 
-.Accordion_Content[State="Collapsed"]{
+.Accordion_Content[State="Collapsed"], .Accordion[State="Collapsed"] >
+.Accordion_Content{
     max-height: 0%;
     overflow-y: hidden;
 }
@@ -1283,7 +1288,7 @@ body{
 }
 
 .Toggle{
-	max-width: 1000px;
+	/* max-width: 1000px; */
 	
 	height: 25px;
 	min-height: 25px;
@@ -1344,7 +1349,7 @@ body{
 }
 
 .Radio_Button{
-	max-width: 1000px;
+	/* max-width: 1000px; */
 	
 	height: 25px;
 	min-height: 25px;

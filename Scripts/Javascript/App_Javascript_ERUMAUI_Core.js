@@ -2,21 +2,33 @@
     Core functions
 */
 
+function Element_Get_ByID(ID){
+	return document.getElementById(ID);
+}
+
+function Element_Get_ByQuery(Query){
+	return document.querySelector(Query);
+}
+
+function Element_Get_ByQuery_All(Query){
+	return document.querySelectorAll(Query);
+}
+
 function Element_Attribute_Set(ID, Attribute, Value){
-    document.getElementById(ID).setAttribute(Attribute, Value);
+    Element_Get_ByID(ID).setAttribute(Attribute, Value);
 }
 
 function Element_Attribute_Remove(ID, Attribute){
-    document.getElementById(ID).removeAttribute(Attribute);
+    Element_Get_ByID(ID).removeAttribute(Attribute);
 }
 
 function Element_Attribute_Get(ID, Attribute){
-	return document.getElementById(ID).getAttribute(Attribute);
+	return Element_Get_ByID(ID).getAttribute(Attribute);
 }
 
 function Element_Opacity_Set(ID, Opacity){
     if (Opacity >= 0 && Opacity <= 100){
-        document.getElementById(ID).style.opacity = Opacity + "%";
+		Element_Get_ByID(ID).style.opacity = Opacity + "%";
     }
 }
 
@@ -57,8 +69,11 @@ function Element_Style_Display(ElementID, ElementDisplay){
 	document.getElementById(ElementID).style.display = ElementDisplay;
 }
 
-function Page_ChangePage(URL){
+function Page_ChangePage(URL, Transition_Function){
 	window.location = URL;
+	if (Transition_Function != null || Transition_Function != null){
+		Transition_Function();
+	}
 }
 
 function UF_Parameter_Get(Parameter){
@@ -74,4 +89,16 @@ function UF_Parameter_Set(Parameter, Value){
     UF_URL_Parameter.set(Parameter, Value);
     UF_URL = window.location.pathname + '?' + UF_URL_Parameter.toString();
     window.history.pushState({}, '', UF_URL);
+}
+
+function UF_Parameter_Remove(Parameter){
+	UF_URL_Parameter = new URLSearchParams(window.location.search);
+    UF_URL_Parameter.delete(Parameter);
+	if (UF_URL_Parameter.size > 0){
+		UF_URL = window.location.pathname + '?' + UF_URL_Parameter.toString();
+    	window.history.pushState({}, '', UF_URL);
+	} else {
+		UF_URL = window.location.pathname + UF_URL_Parameter.toString();
+    	window.history.pushState({}, '', UF_URL);
+	}
 }
