@@ -71,7 +71,7 @@ function Element_Style_Display(ElementID, ElementDisplay){
 
 function Page_ChangePage(URL, Transition_Function){
 	window.location = URL;
-	if (Transition_Function != null || Transition_Function != null){
+	if (Transition_Function != null || Transition_Function != undefined){
 		Transition_Function();
 	}
 }
