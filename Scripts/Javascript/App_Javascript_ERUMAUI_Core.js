@@ -69,11 +69,17 @@ function Element_Style_Display(ElementID, ElementDisplay){
 	document.getElementById(ElementID).style.display = ElementDisplay;
 }
 
-function Page_ChangePage(URL, Transition_Function){
-	window.location = URL;
+async function Page_ChangePage(URL, Transition_Function){
 	if (Transition_Function != null || Transition_Function != undefined){
-		Transition_Function();
+		await Transition_Function();
+		// Sample implementation
+		/*
+		async function TESUTO() {
+            return new Promise (resolve => setTimeout(resolve, 5000));
+        }
+		*/
 	}
+	window.location = URL;
 }
 
 function UF_Parameter_Get(Parameter){
