@@ -108,3 +108,26 @@ function UF_Parameter_Remove(Parameter){
     	window.history.pushState({}, '', UF_URL);
 	}
 }
+
+// Gets the current date
+function Date_Get(){
+    const CurrentDate = new Date();
+    var Date_Month_Index = CurrentDate.getMonth();
+    var Date_Month_Array = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var Date_Month = Date_Month_Array[Date_Month_Index];
+    var Date_Day = CurrentDate.getDate();
+    var Date_Year = CurrentDate.getFullYear();
+    return `${Date_Day} ${Date_Month} ${Date_Year}`;
+}
+
+// Creates a unique key
+function Key_Generate(){
+    const Time = new Date();
+    var Time_Month = Time.getMonth();
+    var Time_Day = Time.getDate();
+    var Time_Year = Time.getFullYear();
+    var Time_Hours = Time.getHours();
+    var Time_Minutes = Time.getMinutes();
+    var Time_Seconds = Time.getSeconds();
+    return `${Time_Year}${Time_Month}${Time_Day}_${Time_Hours}${Time_Minutes}${Time_Seconds}`;
+}
