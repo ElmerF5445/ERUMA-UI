@@ -70,7 +70,10 @@ function Element_Style_Display(ElementID, ElementDisplay){
 }
 
 async function Page_ChangePage(URL, Transition_Function){
-	await Transition_Function();
+	if (Transition_Function){
+		await Transition_Function();
+	}
+	
 	// Sample implementation
 	/*
 	async function TESUTO() {
