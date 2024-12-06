@@ -27,6 +27,7 @@ document.addEventListener('keydown', (event) => {
   if (debugger_keysPressed['Alt'] && event.key == '1') {
     if (Debugger_Console_Toggle_Display == false) {
       document.getElementById("Debugger_Console").style.display = "grid";
+      Element_Get_ByID("Debugger_Console_CommandEntry_Input").focus();
       Debugger_Console_Toggle_Display = true;
     } else {
       document.getElementById("Debugger_Console").style.display = "none";
@@ -50,6 +51,21 @@ document.addEventListener('keydown', (event) => {
   if (debugger_keysPressed['Alt'] && event.key == '3') {
     Debugger_PrintCommandHistory();
   }
+  
+  if (debugger_keysPressed['Alt'] && event.key == '4') {
+    if (localStorage.getItem("ERUMAUI_Debugging_PrintInScreen") != null) {
+      if (localStorage.getItem("ERUMAUI_Debugging_PrintInScreen") == "true"){
+        localStorage.setItem("ERUMAUI_Debugging_PrintInScreen", "false");
+        console.log("Console messages will print on the dev tools window on next refresh.");
+      } else {
+        localStorage.setItem("ERUMAUI_Debugging_PrintInScreen", "true");
+        console.log("Console messages will print on the debugger screen on next refresh.");
+      }
+    } else {
+      localStorage.setItem("ERUMAUI_Debugging_PrintInScreen", "true");
+      console.log("Console messages will print on the debugger screen on next refresh.");
+    }
+  }
 
   if (debugger_keysPressed['ArrowUp']) {
     if (document.getElementById("Debugger_Console_CommandEntry_Input") === document.activeElement) {
@@ -67,8 +83,8 @@ document.addEventListener('keyup', (event) => {
   delete debugger_keysPressed[event.key];
 });
 
-let Debugger_Shortcut_List_Keys = ["Alt + 1", "Alt + 2", "Alt + 3", "Up/Down"];
-let Debugger_Shortcut_List_Meaning = ["Toggle this screen", "Toggle outlines", "Print Console Command History", "Traverse Console Command History"];
+let Debugger_Shortcut_List_Keys = ["Alt + 1", "Alt + 2", "Alt + 3", "Alt + 4", "Up/Down"];
+let Debugger_Shortcut_List_Meaning = ["Toggle this screen", "Toggle outlines", "Print Console Command History", "Toggle debug output to this screen", "Traverse Console Command History"];
 function Debugger_Generate_Shortcut_List() {
   console.log("========================================");
   console.log("Debugger Keyboard Shortcuts List");
@@ -81,57 +97,63 @@ function Debugger_Generate_Shortcut_List() {
 var Debugger_CommandHistory = [];
 
 document.addEventListener('DOMContentLoaded', function () {
-  console.log("Console messages are printed on the Debugger screen. Press Alt + 1 to toggle it.")
-  if (document.getElementById('Debugger_Console_CommandEntry_Input') == null){
-    Debugger_Construct();
-  }
-  // Create a function to display console messages in a specific HTML element
-  var consoleInput = document.getElementById('Debugger_Console_CommandEntry_Input');
-  consoleInput.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-      var command = consoleInput.value;
-      Debugger_CommandHistory.push(command);
-      Debugger_CommandHistory_CurrentIndex = Debugger_CommandHistory.length;
-      executeCommand(command);
-      consoleInput.value = '';
-    }
-  });
-
-  function executeCommand(command) {
-    // Evaluate and execute the command
-    try {
-      var result = eval(command);
-      if (result !== undefined) {
-        console.log(result);
+  if (localStorage.getItem("ERUMAUI_Debugging_PrintInScreen") != null) {
+    if (localStorage.getItem("ERUMAUI_Debugging_PrintInScreen") == "true") {
+      console.log("Console messages are printed on the Debugger screen. Press Alt + 1 to toggle it.")
+      if (document.getElementById('Debugger_Console_CommandEntry_Input') == null) {
+        Debugger_Construct();
       }
-    } catch (error) {
-      console.error(error);
+      // Create a function to display console messages in a specific HTML element
+      var consoleInput = document.getElementById('Debugger_Console_CommandEntry_Input');
+      consoleInput.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          var command = consoleInput.value;
+          Debugger_CommandHistory.push(command);
+          Debugger_CommandHistory_CurrentIndex = Debugger_CommandHistory.length;
+          executeCommand(command);
+          consoleInput.value = '';
+        }
+      });
+
+      function executeCommand(command) {
+        // Evaluate and execute the command
+        try {
+          var result = eval(command);
+          if (result !== undefined) {
+            console.log(result);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
+
+      function displayConsoleMessage(message, type) {
+        var consoleElement = document.getElementById('Debugger_Console_Text'); // ID of the HTML element where you want to display the console messages
+        var messageElement = document.createElement('p');
+        messageElement.className = type;
+        messageElement.classList.add("Debugger_Console_Text");
+        messageElement.textContent = message;
+        consoleElement.appendChild(messageElement);
+      }
+
+      // Override the default console methods
+      console.log = function (message) {
+        displayConsoleMessage(message, 'log'); // 'log' class can be styled as needed
+      };
+
+      console.warn = function (message) {
+        displayConsoleMessage(message, 'warn'); // 'warn' class can be styled as needed
+      };
+
+      console.error = function (message) {
+        displayConsoleMessage(message, 'error'); // 'error' class can be styled as needed
+      };
+
+      Debugger_Generate_Shortcut_List();
     }
+  } else {
+    localStorage.setItem("ERUMAUI_Debugging_PrintInScreen", "true");
   }
-
-  function displayConsoleMessage(message, type) {
-    var consoleElement = document.getElementById('Debugger_Console_Text'); // ID of the HTML element where you want to display the console messages
-    var messageElement = document.createElement('p');
-    messageElement.className = type;
-    messageElement.classList.add("Debugger_Console_Text");
-    messageElement.textContent = message;
-    consoleElement.appendChild(messageElement);
-  }
-
-  // Override the default console methods
-  console.log = function (message) {
-    displayConsoleMessage(message, 'log'); // 'log' class can be styled as needed
-  };
-
-  console.warn = function (message) {
-    displayConsoleMessage(message, 'warn'); // 'warn' class can be styled as needed
-  };
-
-  console.error = function (message) {
-    displayConsoleMessage(message, 'error'); // 'error' class can be styled as needed
-  };
-
-  Debugger_Generate_Shortcut_List();
 });
 
 function Debugger_PrintCommandHistory() {

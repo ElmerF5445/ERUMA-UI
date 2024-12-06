@@ -74,11 +74,12 @@ async function Page_ChangePage(URL, Transition_Function){
 		await Transition_Function();
 	}
 	
-	// Sample implementation
+	// Sample usage
 	/*
-	async function TESUTO() {
-		return new Promise (resolve => setTimeout(resolve, 5000));
-	}
+		async function Test_Transition(){
+			LoadingScreen_Show();
+			return new Promise (resolve => setTimeout(resolve, 5000));
+		}
 	*/
 	window.location = URL;
 }

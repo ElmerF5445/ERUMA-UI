@@ -1,10 +1,10 @@
 function LoadingScreen_Hide(){
-    Element_Opacity_Set("LoadingScreen", 0);
+    // Element_Opacity_Set("LoadingScreen", 0);
     Element_Attribute_Set("LoadingScreen", "State", "Disabled");
 }
 
 function LoadingScreen_Show(){
-    Element_Opacity_Set("LoadingScreen", 100);
+    // Element_Opacity_Set("LoadingScreen", 100);
 	Element_Attribute_Set("LoadingScreen", "State", "Enabled");
 }
 
@@ -482,4 +482,9 @@ function TextArea_SnapToSize(ID){
 		TextAreas.style.height = 'auto';
 		TextAreas.style.height = ((TextAreas.scrollHeight) - 20) + 'px';
 	}
+}
+
+async function Test_Transition(){
+	LoadingScreen_Show();
+	return new Promise (resolve => setTimeout(resolve, 5000));
 }

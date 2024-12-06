@@ -194,11 +194,47 @@ body{
     background-color: var(--BG-Color-LoadingScreen);
     position: fixed;
 	z-index: 105;
+	
 	/* pointer-events: none; */
 }
 
+.LoadingScreen > *{
+	opacity: 0%;
+}
+
+.LoadingScreen[State="Enabled"] > *{
+	animation-name: LoadingScreen_Opacitate_In;
+	animation-duration: var(--Element-Transition-Delay);
+	animation-fill-mode: forwards;
+}
+
 .LoadingScreen[State="Disabled"]{
+	opacity: 0%;
 	pointer-events: none;
+}
+
+.LoadingScreen[State="Disabled"] > *{
+	animation-name: LoadingScreen_Opacitate_Out;
+	animation-duration: var(--Element-Transition-Delay);
+	animation-fill-mode: forwards;
+}
+
+@keyframes LoadingScreen_Opacitate_In{
+	0%{
+		opacity: 0%;
+	}
+	100%{
+		opacity: 100%;
+	}
+}
+
+@keyframes LoadingScreen_Opacitate_Out{
+	0%{
+		opacity: 100%;
+	}
+	100%{
+		opacity: 0%;
+	}
 }
 
 .LoadingScreen_Simple{

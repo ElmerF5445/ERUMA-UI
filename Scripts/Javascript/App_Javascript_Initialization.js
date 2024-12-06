@@ -438,5 +438,5 @@ function Startup_Page_FinishInitialization() {
   );
   Element_Attribute_Set("LoadingScreen_Simple", "Opacitation", "Opaque");
   Element_Attribute_Set("LoadingScreen_Splash", "Opacitation", "Opaque");
-  setTimeout(LoadingScreen_Hide, 4000);
+  setTimeout(LoadingScreen_Hide, 3000);
 }
