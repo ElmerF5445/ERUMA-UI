@@ -14,6 +14,23 @@ function Element_Get_ByQuery_All(Query){
 	return document.querySelectorAll(Query);
 }
 
+function Element_Clear(ID){
+	document.getElementById(ID).innerHTML = "";
+}
+
+function Element_Append(ID, ChildToAppend){
+	document.getElementById(ID).appendChild(ChildToAppend);
+}
+
+function Element_InnerHTML_Set(ID, Value){
+	document.getElementById(ID).innerHTML = Value;
+}
+
+function Element_InnerText_Set(ID, Value){
+	document.getElementById(ID).innerText = Value;
+}
+
+
 function Element_Attribute_Set(ID, Attribute, Value){
     Element_Get_ByID(ID).setAttribute(Attribute, Value);
 }
