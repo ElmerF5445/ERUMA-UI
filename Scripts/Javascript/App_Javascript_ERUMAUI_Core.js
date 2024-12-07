@@ -18,6 +18,10 @@ function Element_Clear(ID){
 	document.getElementById(ID).innerHTML = "";
 }
 
+function Element_Create(Type){
+	return document.createElement(Type);
+}
+
 function Element_Append(ID, ChildToAppend){
 	document.getElementById(ID).appendChild(ChildToAppend);
 }
