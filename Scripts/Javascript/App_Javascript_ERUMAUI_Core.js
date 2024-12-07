@@ -150,3 +150,11 @@ function Key_Generate(){
     var Time_Seconds = Time.getSeconds();
     return `${Time_Year}${Time_Month}${Time_Day}_${Time_Hours}${Time_Minutes}${Time_Seconds}`;
 }
+
+function StorageItem_Set(Key, Data){
+	localStorage.setItem(Key, JSON.stringify(Data));
+}
+
+function StorageItem_Get(Key){
+	return JSON.parse(localStorage.getItem(Key));
+}
