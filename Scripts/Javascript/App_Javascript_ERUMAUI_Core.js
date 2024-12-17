@@ -34,6 +34,13 @@ function Element_InnerText_Set(ID, Value){
 	document.getElementById(ID).innerText = Value;
 }
 
+function Element_Value_Get(ID){
+	return Element_Get_ByID(ID).value;
+}
+
+function Element_Value_Set(ID, Value){
+	Element_Get_ByID(ID).value = Value;
+}
 
 function Element_Attribute_Set(ID, Attribute, Value){
     Element_Get_ByID(ID).setAttribute(Attribute, Value);
