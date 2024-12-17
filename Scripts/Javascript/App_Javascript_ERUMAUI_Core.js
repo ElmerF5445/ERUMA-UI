@@ -155,10 +155,18 @@ function Key_Generate(){
     return `${Time_Year}${Time_Month}${Time_Day}_${Time_Hours}${Time_Minutes}${Time_Seconds}`;
 }
 
-function StorageItem_Set(Key, Data){
-	localStorage.setItem(Key, JSON.stringify(Data));
+function StorageItem_Set(Key, Data, Type){
+	if (Type == "Local" || Type == null){
+		localStorage.setItem(Key, JSON.stringify(Data));
+	} else if (Type == "Session") {
+		sessionStorage.setItem(Key, JSON.stringify(Data));
+	}
 }
 
-function StorageItem_Get(Key){
-	return JSON.parse(localStorage.getItem(Key));
+function StorageItem_Get(Key, Type){
+	if (Type == "Local" || Type == null){
+		return JSON.parse(localStorage.getItem(Key));
+	} else if (Type == "Session") {
+		return JSON.parse(sessionStorage.getItem(Key));
+	}
 }
