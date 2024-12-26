@@ -177,3 +177,45 @@ function StorageItem_Get(Key, Type){
 		return JSON.parse(sessionStorage.getItem(Key));
 	}
 }
+
+function Data_Import_FromPath(Path, Type){
+	const request = new XMLHttpRequest();
+    request.open("GET", Path, false);
+    request.send();
+    var Data_Raw = request.responseText;
+    var Data_JSON = JSON.parse(Data_Raw);
+	if (Type == "JSON" || Type == null){
+		return Data_JSON;
+	} else if (Type == "Raw") {
+		return Data_Raw;
+	}
+}
+
+function Data_Import(FileInputElementID, Type){
+	var File_Element = document.getElementById(FileInputElementID);
+    var File_Element_File = File_Element.files[0];
+    const Reader = new FileReader();
+    Reader.onload = function(e){
+        const Data_Raw = e.target.result;
+        const Data_JSON = JSON.parse(Data_Raw);
+		if (Type == "JSON" || Type == null){
+			return Data_JSON;
+		} else if (Type == "Raw") {
+			return Data_Raw;
+		}
+    }
+
+    Reader.readAsText(File_Element_File);
+}
+
+function Data_Export(File_Data, File_Name, File_Extension, Type){
+	var Data_Initial = File_Data;
+	var Data_Final;
+	if (Type == "JSON" || Type == null){
+		Data_Final = JSON.stringify(Data_Initial, null, 2);
+	} else if (Type == "Raw") {
+		Data_Final = Data_Initial;
+	}
+	const Data_Blob = new Blob([Data_Final], {type: 'application/json'});
+	saveAs(Data_Blob, `${File_Name}${File_Extension}`);
+}
