@@ -97,7 +97,7 @@ function Element_Style_Display(ElementID, ElementDisplay){
 	document.getElementById(ElementID).style.display = ElementDisplay;
 }
 
-async function Page_ChangePage(URL, Transition_Function){
+async function Page_ChangePage(URL, Transition_Function, OpenInTab){
 	if (Transition_Function){
 		await Transition_Function();
 	}
@@ -109,7 +109,11 @@ async function Page_ChangePage(URL, Transition_Function){
 			return new Promise (resolve => setTimeout(resolve, 5000));
 		}
 	*/
-	window.location = URL;
+	if (OpenInTab == "Current" || OpenInTab == null){
+		window.location = URL;
+	} else if (OpenInTab == "New") {
+		window.open(URL, '_blank');
+	}
 }
 
 function UF_Parameter_Get(Parameter){
