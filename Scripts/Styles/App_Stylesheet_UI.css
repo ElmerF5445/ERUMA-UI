@@ -950,10 +950,27 @@ body{
 	/* background-color: #00a2b7; */
 	position: absolute;
 	display: none;
+	display: none;
+	opacity: 0%;
 }
 
 .Tab_Container_Content_Item:nth-child(1){
 	display: block;
+}
+
+.Tab_Container_Content_Item[State = "Inactive"]{
+	display: none;
+	opacity: 100%;
+}
+
+.Tab_Container_Content_Item[State = "Preparing"]{
+	display: block;
+	opacity: 0%;
+}
+
+.Tab_Container_Content_Item[State = "Active"]{
+	display: block;
+	opacity: 100%;
 }
 
 .Tab_Container_Content_Item[Tabs_Transition="CurrentTab_Upwards"]{
@@ -986,6 +1003,10 @@ body{
 
 .Tab_Container_Content_Item[Tabs_Transition="NewTab_Right"]{
 	animation-name: Tabs_Transition_NewTab_Right;
+}
+
+.Tab_Horizontal_Container_Content > *{
+	background-color: red;
 }
 
 /* Horizontal Tabs */
