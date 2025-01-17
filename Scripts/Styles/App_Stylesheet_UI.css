@@ -959,7 +959,7 @@ body{
 }
 
 .Tab_Container_Content_Item[State = "Inactive"]{
-	display: none;
+	display: none !important;
 	opacity: 100%;
 }
 

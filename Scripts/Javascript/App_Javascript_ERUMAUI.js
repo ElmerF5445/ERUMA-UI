@@ -310,7 +310,7 @@ function Tabs_ChangeTab(ButtonID, Layout){
 		Tabs_Target_Container_TabList_ID_Index_CurrentTab = Tabs_Target_Container_TabList_ID.indexOf(Tabs_Target_Container_CurrentTab);
 		// Index of the target tab in the selector button property.
 		Tabs_Target_Container_TabList_ID_Index_TargetTab = Tabs_Target_Container_TabList_ID.indexOf(Tabs_Button_Target_Tab);
-		console.log(Tabs_Target_Container_TabList_ID_Index_CurrentTab + " --> " + Tabs_Target_Container_TabList_ID_Index_TargetTab);
+		// console.log(Tabs_Target_Container_TabList_ID_Index_CurrentTab + " --> " + Tabs_Target_Container_TabList_ID_Index_TargetTab);
 		if (Tabs_Button_Target_Tab != Tabs_Target_Container_CurrentTab){
 			// Checks if there are other active tabs other than the currently active tab and disables them
 			for (a = 0; a < Tabs_Target_Container_TabList_ID.length; a++){
@@ -359,7 +359,7 @@ function Tabs_ChangeTab(ButtonID, Layout){
 			// Element_Attribute_Set(Tabs_Target_Container_CurrentTab, "HasListener_AnimationEnd", "True");
 			var Handler = function(event){
 				Tabs_Transition_Lock = false;
-				console.log("Transition ended");
+				// console.log("Transition ended");
 				event.target.removeEventListener("animationend", Handler); // Remove listener
 				// Element_Attribute_Remove(Tabs_Target_Container_CurrentTab, "HasListener_AnimationEnd");
 				for (a = 0; a < Tabs_Target_Container_TabList_ID.length; a++){
