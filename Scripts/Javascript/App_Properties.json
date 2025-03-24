@@ -36,9 +36,9 @@
                                 "Icon": "Assets/Icons/icon_settings.png"
                             },
                             {
-                                "Title": "Template 2",
-                                "Link": "Pages/App_Template copy.html",
-                                "Icon": "Assets/Icons/icon_settings.png"
+                                "Title": "ERUMA UI 2",
+                                "Link": "2/index.html",
+                                "Icon": "Assets/Icons/ContentByElmerF.png"
                             }
                             
                         ],

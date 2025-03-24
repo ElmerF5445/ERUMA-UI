@@ -1,0 +1,118 @@
+{
+    "App_Info":{
+        "Title": "ERUMA UI",
+        "Version_Title": "2.0",
+        "Version_Number": "2.0",
+        "Version_CompilationDate": "14 March 2025",
+        "Copyright_Title": "Content By ElmerF 2025",
+        "Copyright_Icon": "Assets/Icons/ContentByElmerF.png"
+    },
+    "App_Pages":[
+        {
+            "Page_File": "Template.html",
+            "Page_Properties":{
+                "Window": {
+                    "Title": {
+                        "Primary": "ERUMA UI",
+                        "Secondary": "Template",
+                        "Separator": " | ",
+                        "Icon": "Assets/Icons/ContentByElmerF.png"
+                    }                    
+                },
+                "KeyboardControls": {
+                    "Enabled": true,
+                    "Resource": "Assets/Resource_Files/App_KeyboardControls.json"
+                },
+                "Header": {
+                    "Enabled": true,
+                    "Navigation": {
+                        "Title": "Template Page",
+                        "Icon": "Assets/Icons/ContentByElmerF.png"
+                    },
+                    "Menu": {
+                        "Navigation": {
+                            "Enabled": true,
+                            "Contents": [
+                                {
+                                    "Title": "Navigation 1",
+                                    "Link": "Template.html",
+                                    "Icon": "Assets/Icons/ContentByElmerF.png",
+                                    "Transition": "Transition",
+                                    "Onclick": null,
+                                    "CloseAfterClick": true
+                                }
+                            ]
+                        },
+                        "Actions": {
+                            "Enabled": true,
+                            "Contents": [
+                                {
+                                    "Title": "Action 1",
+                                    "Link": null,
+                                    "Icon": "Assets/Icons/ContentByElmerF.png",
+                                    "Transition": null,
+                                    "Onclick": "console.log('Action!')",
+                                    "CloseAfterClick": true
+                                }
+                            ]
+                        },
+                        "Status": {
+                            "Enabled": true,
+                            "Components": {
+                                "Clock": true,
+                                "Battery": true,
+                                "Connection": true
+                            }
+                        }
+                    }
+                },
+                "Panels": {
+                    "Stretch_WholeHeight": true,
+                    "Left": {
+                        "Enabled": true,
+                        "Title": "Panel Left",
+                        "UseAsBottomNavigation": true,
+                        "Toggle": true,
+                        "HideWhenCollapsed": false,
+                        "PushMainPanel": false,
+                        "FadeContentsWhenCollapsed": true,
+                        "Width": {
+                            "Expanded": "300px",
+                            "Collapsed": "40px"
+                        }
+                    },
+                    "Right": {
+                        "Enabled": true,
+                        "Title": "Panel Right",
+                        "Toggle": true,
+                        "HideWhenCollapsed": false,
+                        "PushMainPanel": false,
+                        "FadeContentsWhenCollapsed": true,
+                        "Width": {
+                            "Expanded": "300px",
+                            "Collapsed": "40px"
+                        }
+                    },
+                    "Center": {
+                        "Margins": true
+                    }
+                },
+                "Toasts": {
+                    "Enabled": true,
+                    "Position": "Right"
+                },
+                "LoadingScreen": {
+                    "Enabled": true,
+                    "CloseDelay": "0.5s",
+                    "Configuration": "Splash"
+                },
+                "ClockScreen": {
+                    "Enabled": true
+                },
+                "Ribbon": {
+                    "Enabled": true
+                }
+            }
+        }
+    ]
+}
