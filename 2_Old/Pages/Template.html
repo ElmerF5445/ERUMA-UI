@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <title id="Window_Title">Window.Title.Primary | Window.Title.Secondary</title>
+    <link rel="icon" type="image/png" href="Assets/Icons/favicon.png" sizes="96x96" id="Window_Icon">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="Scripts/Styles/App_Stylesheet_Base.css">
+    <!-- Scripts -->
+     <script src="Scripts/Javascript/ERUMAUI_Javascript_Core.js"></script>
+     <script src="Scripts/Javascript/ERUMAUI_Javascript_Initialization.js"></script>
+     <script src="Scripts/Javascript/ERUMAUI_Javascript_UI.js" defer></script>
+     <script src="Scripts/Javascript/Test.js" defer></script>
+</head>
+<body Theme="Dark">
+    <div class="Screen_Loading" id="Screen_Loading">
+        <div class="Screen_Loading_Splash">
+            <span></span>
+            <div class="Screen_Loading_Splash_Window">
+                <div class="Screen_Loading_Splash_Window_Loader"></div>
+                <img src="Assets/Images/Splash.png" loading="lazy" draggable="false" class="Screen_Loading_Splash_Window_Image" id="Screen_Loading_Splash_Window_Image"/>
+                <img src="Assets/Icons/ContentByElmerF.png" loading="lazy" draggable="false" class="Screen_Loading_Splash_Window_Icon" id="Screen_Loading_Splash_Window_Icon"/>
+            </div>
+            <div class="Screen_Loading_Splash_Text">
+                <h1 class="Screen_Loading_Splash_Text_Title" id="Screen_Loading_Splash_Text_Title">
+                    Screen_Loading_Splash_Text_Title
+                </h1>
+                <p class="Screen_Loading_Splash_Text_Page" id="Screen_Loading_Splash_Text_Page">
+                    Screen_Loading_Splash_Text_Page
+                </p>
+            </div>
+            <span></span>
+            <div class="Screen_Loading_Splash_Copyright">
+                <img src="Assets/Icons/ContentByElmerF.png" class="Screen_Loading_Splash_Copyright_Icon" loading="lazy" draggable="false" id="Screen_Loading_Splash_Copyright_Icon"/>
+                <h3 class="Screen_Loading_Splash_Copyright_Text" id="Screen_Loading_Splash_Copyright_Text">
+                    Screen_Loading_Splash_Copyright_Text
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="Screen_Clock" id="Screen_Clock">
+
+    </div>
+    <div class="Subwindows" id="Subwindows">
+
+    </div>
+    <div class="Toasts" id="Toasts">
+
+    </div>
+    <div class="Overlays" id="Overlays">
+
+    </div>
+    <div class="Panels_Toggles" id="Panels_Toggles">
+        
+        <button class="Panel_Toggle" id="Panel_Toggle_Left" Left  PushableBy_Navigation="True" Config="WithNavigation" onclick="Panels_Toggle('Left')">
+            <img src="Assets/Icons/Icon_Hamburger.png" draggable="false" loading="lazy" class="Panel_Toggle_Icon"/>
+            <p class="Panel_Toggle_Text" id="Panel_Toggle_Left_Text">
+                <!-- Left Panel Title -->
+            </p>
+        </button>
+        <button class="Panel_Toggle" id="Panel_Toggle_Right" Right onclick="Panels_Toggle('Right')">
+            <p class="Panel_Toggle_Text" id="Panel_Toggle_Right_Text">
+                <!-- Right Panel Title -->
+            </p>
+            <img src="Assets/Icons/Icon_Hamburger.png" draggable="false" loading="lazy" class="Panel_Toggle_Icon"/>
+        </button>
+    </div>
+    <header class="Header" id="Header">
+        <button class="Header_Navigation">
+            <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Header_Navigation_Icon" id="Header_Navigation_Icon"/>
+            <h1 class="Header_Navigation_Title" id="Header_Navigation_Title">
+                <!-- Template page -->
+            </h1>
+        </button>
+        <div class="Header_Content">
+            <h1 class="Header_Title" id="Header_Title">
+                <!-- Template page -->
+            </h1>
+        </div>
+        <button class="Header_Status">
+            <h3 class="Header_Status_Text">
+                11:03 AM
+            </h3>
+            <h3 class="Header_Status_Text">
+                17%
+            </h3>
+            <img src="Assets/Icons/Icon_Connection_Online.png" draggable="false" loading="lazy" class="Header_Status_Icon"/>
+        </button>
+    </header>
+    <header class="Ribbon" id="Ribbon">
+        <div class="Ribbon_Sections">
+            <div class="Ribbon_Section" id="Ribbon_1">
+                <button class="Ribbon_Section_Item">
+                    <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Ribbon_Section_Item_Icon"/>
+                    <p class="Ribbon_Section_Item_Text">
+                        Ribbon section 1 item 1
+                    </p>
+                </button>
+                <button class="Ribbon_Section_Item">
+                    <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Ribbon_Section_Item_Icon"/>
+                    <p class="Ribbon_Section_Item_Text">
+                        Ribbon section 1 item 2
+                    </p>
+                </button>
+            </div>
+            <div class="Ribbon_Section" id="Ribbon_2">
+                <button class="Ribbon_Section_Item">
+                    <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Ribbon_Section_Item_Icon"/>
+                    <p class="Ribbon_Section_Item_Text">
+                        Ribbon section 2 item 1
+                    </p>
+                </button>
+                <button class="Ribbon_Section_Item">
+                    <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Ribbon_Section_Item_Icon"/>
+                    <p class="Ribbon_Section_Item_Text">
+                        Ribbon section 2 item 2
+                    </p>
+                </button>
+            </div>
+            <div class="Ribbon_Section" id="Ribbon_3">
+                <button class="Ribbon_Section_Item">
+                    <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Ribbon_Section_Item_Icon"/>
+                    <p class="Ribbon_Section_Item_Text">
+                        Ribbon section 3 item 1
+                    </p>
+                </button>
+                <button class="Ribbon_Section_Item">
+                    <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Ribbon_Section_Item_Icon"/>
+                    <p class="Ribbon_Section_Item_Text">
+                        Ribbon section 3 item 2
+                    </p>
+                </button>
+            </div>
+        </div>
+        
+    </header>
+    <div class="Navigation" id="Navigation" State="Collapsed" Visibility="Visible">
+        <button class="Navigation_Button Navigation_Toggle" onclick="Navigation_Toggle()">
+            <img src="Assets/Icons/Icon_Hamburger.png" draggable="false" loading="lazy" class="Navigation_Button_Icon"/>
+        </button>
+        <div id="Navigation_List">
+            <button class="Navigation_Button" Icon State="Active" Target_Panel_Left="IDofLeftPanel" Target_Panel_Center="IDofCenterPanel" Target_Panel_Right="IDofRightPanel" Target_Ribbon="Ribbon_1" id="Navigation_Button_1" onclick="Navigation_Navigate(this.id)">
+                <div class="Navigation_Button_Background"></div>
+                <div class="Navigation_Button_Pill"></div>
+                <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Navigation_Button_Icon"/>
+                <p class="Navigation_Button_Text">
+                    Screen 1
+                </p>
+            </button>
+            <button class="Navigation_Button" Icon Target_Panel_Left="IDofLeftPanel2" Target_Panel_Center="IDofCenterPanel2" Target_Panel_Right="IDofRightPanel2" Target_Ribbon="Ribbon_1" id="Navigation_Button_2" onclick="Navigation_Navigate(this.id)">
+                <div class="Navigation_Button_Background"></div>
+                <div class="Navigation_Button_Pill"></div>
+                <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Navigation_Button_Icon"/>
+                <p class="Navigation_Button_Text">
+                    Screen 2
+                </p>  
+            </button>
+            <button class="Navigation_Button" Icon Target_Panel_Left="IDofLeftPanel3" Target_Panel_Center="IDofCenterPanel3" Target_Panel_Right="IDofRightPanel3" Target_Ribbon="Ribbon_1" id="Navigation_Button_3" onclick="Navigation_Navigate(this.id)">
+                <div class="Navigation_Button_Background"></div>
+                <div class="Navigation_Button_Pill"></div>
+                <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="Navigation_Button_Icon"/>
+                <p class="Navigation_Button_Text">
+                    Screen 3
+                </p>  
+            </button>
+        </div>
+        
+    </div>
+    <div class="Panels" id="Panels" Config="WithNavigation" PushableBy_Navigation="True">
+        <div class="Panel_Left" id="Panel_Left">
+            <div class="Panel_Components">
+                <div class="Panel_Component" id="IDofLeftPanel">
+                    <h1 class="General_Title">
+                        Panel 1
+                    </h1>
+                </div>
+                <div class="Panel_Component" id="IDofLeftPanel2">
+                    <h1 class="General_Title">
+                        Panel 2
+                    </h1>
+                </div>
+                <div class="Panel_Component" id="IDofLeftPanel3">
+                    <h1 class="General_Title">
+                        Panel 3
+                    </h1>
+                </div>
+            </div>
+            
+        </div>
+        <main class="Panel_Center Content_Main" id="Content_Main">
+            <div class="Panel_Components">
+                <div class="Panel_Component" id="IDofCenterPanel">
+                    <h1 class="General_Title" Text_Unselectable>
+                        Title
+                    </h1>
+                    <p class="General_Paragraph" Text_Selectable>
+                        All texts from h1 to h6 and p do not have a margin by default. They are also unselectable by default. <br>Add "Text_Selectable" attribute to the parent element to set every text inside it to be selectable. This also applies to specific elements. <br> Add "Text_Unselectable" attribute to specific elements to make them unselectable.<br>
+                        Add "Text_Margin" attribute to add a default text margin of 10px.
+                    </p>
+                    <div class="Accordion" id="Accordion_ID" State="Expanded">
+                        <button class="Accordion_Title" onclick="Accordion_Toggle(this.parentNode.id)">
+                            <h2 class="Accordion_Title_Text">
+                                Accordion
+                            </h2>
+                            <img class="Accordion_Title_Icon Accordion_Title_Icon_Arrow" src="Assets/Icons/Icon_Arrow_Up.png" loading="lazy" draggable="false"/>
+                        </button>
+                        <div class="Accordion_Content">
+                            <p class="General_Paragraph">
+                                Set the ID on the parent "Accordion" element. Place the onclick function "Accordion_Toggle(this.parentNodeid)" to the clickable "Accordion_Title" element. If there are multiple controls and icons on the title bar, place the function to the "Accordion_Title_Icon_Arrow" element. The title bar can have a max of 5 icons.
+                            </p>
+                        </div>
+                    </div>
+                    <p class="General_Paragraph" id="Test">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio praesentium veritatis optio aspernatur nobis labore voluptate commodi dolorum obcaecati quis deleniti sit, incidunt reiciendis rem voluptatibus unde eos consectetur. Non?
+                    </p>
+                    <h1 class="General_Title" Margin_Vertical>
+                        Buttons
+                    </h1>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; grid-gap: 10px">
+                        <button class="General_Button">
+                            Normal button
+                        </button>
+                        <button class="General_Button" Primary>
+                            Primary button
+                        </button>
+                        <button class="General_Button" Secondary>
+                            Secondary button
+                        </button>
+                        <button class="General_Button" Icon_Left>
+                            <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="General_Button_Icon"/>
+                            Button with icon on the left
+                        </button>
+                        <button class="General_Button" Icon_Right>
+                            Button with icon on the right
+                            <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="General_Button_Icon"/>
+                        </button>
+                        <button class="General_Button" Icon>
+                            <img src="Assets/Icons/ContentByElmerF.png" draggable="false" loading="lazy" class="General_Button_Icon"/>
+                        </button>
+                    </div>
+                    <h1 class="General_Title" Margin_Vertical>
+                        Dropdown
+                    </h1>
+                    <div class="Dropdown" id="DropdownID">
+                        <button class="Dropdown_Button" onclick="Dropdown_ToggleList(this.parentNode.id)" Fill_Horizontal>
+                            <span class="Dropdown_Button_Text"> Dropdown button </span>
+                            <img class='Dropdown_Button_Arrow' src='Assets/Icons/Icon_Arrow_Down.png' draggable='false' loading='lazy'/>
+                        </button>
+                        <div class="Dropdown_List">
+                            <button class="Dropdown_List_Item" onclick="Dropdown_SubmitValue(this.parentNode.parentNode.id, this.innerText)">
+                                Item 1
+                            </button>
+                            <button class="Dropdown_List_Item" onclick="Dropdown_SubmitValue(this.parentNode.parentNode.id, this.innerText)">
+                                Item 2
+                            </button>
+                            <button class="Dropdown_List_Item" onclick="Dropdown_SubmitValue(this.parentNode.parentNode.id, this.innerText)">
+                                Item 3
+                            </button>
+                        </div>
+                    </div>
+                    <p class="General_Paragraph" Margin_Vertical>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium adipisci aliquid eum vel ex, fugiat similique. Itaque vero cumque culpa veritatis rerum suscipit exercitationem non ad. Est dolores repellendus nihil.
+                    </p>
+                    <h1 class="General_Title" Margin_Vertical>
+                        Toggle buttons
+                    </h1>
+                    <button class="Toggle" Fill_Horizontal onclick="Buttons_Toggle(this.id)" id="ToggleID">
+                        <div class="Toggle_Switch">
+                            <div class="Toggle_Switch_Head"></div>
+                        </div>
+                        <p class="Toggle_Text">
+                            Default toggle
+                        </p>
+                    </button>
+                    <button class="Toggle" Style_Default Fill_Horizontal onclick="Buttons_Toggle(this.id)" id="ToggleID2">
+                        <div class="Toggle_Switch">
+                            <div class="Toggle_Switch_Head"></div>
+                        </div>
+                        <p class="Toggle_Text">
+                            Toggle with Style_Default attribute
+                        </p>
+                    </button>
+                    <button class="Toggle" Style_Switch Fill_Horizontal onclick="Buttons_Toggle(this.id)" id="ToggleID3">
+                        <div class="Toggle_Switch">
+                            <div class="Toggle_Switch_Head"></div>
+                        </div>
+                        <p class="Toggle_Text">
+                            Toggle with Style_Switch attribute
+                        </p>
+                    </button>
+                    <h1 class="General_Title" Margin_Vertical>
+                        Radio buttons
+                    </h1>
+                    <div class="Radio">
+                        <button class="Radio_Button" onclick="Radio_Select(this.id)" id="RadioItem1">
+                            <div class="Radio_Button_Indicator"></div>
+                            <p class="Radio_Button_Text">
+                                Radio item 1
+                            </p>
+                        </button>
+                        <button class="Radio_Button" onclick="Radio_Select(this.id)" id="RadioItem2">
+                            <div class="Radio_Button_Indicator"></div>
+                            <p class="Radio_Button_Text">
+                                Radio item 2
+                            </p>
+                        </button>
+                        <button class="Radio_Button" onclick="Radio_Select(this.id)" id="RadioItem3">
+                            <div class="Radio_Button_Indicator"></div>
+                            <p class="Radio_Button_Text">
+                                Radio item 3
+                            </p>
+                        </button>
+                        <button class="Radio_Button" onclick="Radio_Select(this.id)" id="RadioItem4">
+                            <div class="Radio_Button_Indicator"></div>
+                            <p class="Radio_Button_Text">
+                                Radio item 4
+                            </p>
+                        </button>
+                    </div>
+                    <h1 class="General_Title" Margin_Vertical>
+                        Text input
+                    </h1>
+                    <p class="General_Paragraph" Margin_Vertical>
+                        Adding Autoresize=true to a textarea allows it to resize with the height of the current text automatically. For textareas created after the page was loaded, trigger TextArea_SnapToSize_All() or TextArea_SnapToSize([ID]) to snap them to size.
+                    </p>
+                    <input type="text" class="Input_Text" placeholder="Text" Fill_Horizontal/>
+                    <textarea type="text" class="Input_Text_Long" placeholder="Text" Fill_Horizontal></textarea>
+                    <textarea type="text" class="Input_Text_Long" placeholder="Text" Fill_Horizontal Autoresize="true"></textarea>
+                    <h1 class="General_Title" Margin_Vertical>
+                        Forms
+                    </h1>
+                    <p class="General_Paragraph" Margin_Vertical>
+                        Composition="Linear" makes a singular linear layout for the form.
+                    </p>
+                    <form class="Input_Form" Composition="Linear">
+                        <label class="Input_Label" for="FormInputID1">
+                            Label 1
+                        </label>
+                        <input type="text" class="Input_Text" placeholder="Text" id="FormInputID1"/>
+                        <label class="Input_Label" for="FormInputID2">
+                            Label 2
+                        </label>
+                        <input type="text" class="Input_Text" placeholder="Text" id="FormInputID2"/>
+                    </form>
+                    <p class="General_Paragraph" Margin_Vertical>
+                        Composition="ByTwo" makes a grid layout with 2 columns, the first being the label and the second being the input. It should follow that label must come first before the input, and that it must end as an even number of children.<br><br>Elements that takes two columns must have the Override_Form_Composition attribute.
+                    </p>
+                    <form class="Input_Form" Composition="ByTwo">
+                        <label class="Input_Label" for="Form2InputID1">
+                            Label 1
+                        </label>
+                        <input type="text" class="Input_Text" placeholder="Text" id="Form2InputID1"/>
+                        <label class="Input_Label" for="Form2InputID2">
+                            Label 2
+                        </label>
+                        <input type="text" class="Input_Text" placeholder="Text" id="Form2InputID2"/>
+                        <button class="General_Button" Override_Form_Composition>
+                            Submit
+                        </button>
+                    </form>
+                    <h1 class="General_Title" Margin_Vertical>
+                        Loaders
+                    </h1>
+                    <p class="General_Paragraph" Margin_Vertical>
+                        Use Bar_Dynamic to combine both loading and progress bars. <br>Use Loader_Bar for horizontal loading bar.<br>Use Loader_Square for a square loader.
+                    </p>
+                    <div class="Bar_Dynamic" id="Test_Bar_Dynamic">
+                        <div class="Bar_Dynamic_Bar" id="Test_Bar_Dynamic_Bar"></div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr);">
+                        <button class="General_Button" onclick="Test_Bar_Dynamic_State('Loading')">
+                            State=Loading
+                        </button>
+                        <button class="General_Button" onclick="Test_Bar_Dynamic_State('Progress')">
+                            State=Progress
+                        </button>
+                        <button class="General_Button" onclick="Test_Bar_Dynamic_Progress('25%')">
+                            Progress: 25%
+                        </button>
+                        <button class="General_Button" onclick="Test_Bar_Dynamic_Progress('100%')">
+                            Progress: 100%
+                        </button>
+                    </div>
+                    <div class="Loader_Bar">
+                        <div class="Loader_Bar_Component"></div>
+                    </div>
+                    <div class="Loader_Square" style="display: none">
+                        <div class="Loader_Square_Component"></div>
+                        <div class="Loader_Square_Component"></div>
+                        <div class="Loader_Square_Component"></div>
+                        <div class="Loader_Square_Component"></div>
+                    </div>
+                    <h1 class="General_Title" Margin_Vertical>
+                        Remove design properties
+                    </h1>
+                    <p class="General_Paragraph" Margin_Vertical>
+                        Set [Component]="None_Default" to remove default style. It doesn't include its hover, focus, and active style.<br>Set [Component]="None_Hover" to remove default style and its hover state.<br>Set [Component]="None_Active" to remove default style and its hover and active state.<br>Set [Component]="None_Focus" to remove default style and its hover, active, and focus states.<br>Set [Component]="None_All" to remove all styles on all states.
+                    </p>
+                    <p class="General_Paragraph">
+                        This applies to Border and Background. Child elements will not be affected unless the properties are applied to them as well.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <button class="General_Button" Secondary Border="None_Default">
+                            Border=None_Default
+                        </button>
+                        <button class="General_Button" Secondary Border="None_Hover">
+                            Border=None_Hover
+                        </button>
+                        <button class="General_Button" Secondary Border="None_Active">
+                            Border=None_Active
+                        </button>
+                        <button class="General_Button" Secondary Border="None_Focus">
+                            Border=None_Focus
+                        </button>
+                        <button class="General_Button" Secondary Border="None_All">
+                            Border=None_All
+                        </button>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap;">
+                        <button class="General_Button" Secondary Background="None_Default">
+                            Background=None_Default
+                        </button>
+                        <button class="General_Button" Secondary Background="None_Hover">
+                            Background=None_Hover
+                        </button>
+                        <button class="General_Button" Secondary Background="None_Active">
+                            Background=None_Active
+                        </button>
+                        <button class="General_Button" Secondary Background="None_Focus">
+                            Background=None_Focus
+                        </button>
+                        <button class="General_Button" Secondary Background="None_All">
+                            Background=None_All
+                        </button>
+                    </div>
+                </div>
+                <div class="Panel_Component" id="IDofCenterPanel2">
+                    <h1 class="General_Title">
+                        Panel 2
+                    </h1>
+                </div>
+                <div class="Panel_Component" id="IDofCenterPanel3">
+                    <h1 class="General_Title">
+                        Panel 3
+                    </h1>
+                </div>
+            </div>
+            
+        </main>
+        <div class="Panel_Right" id="Panel_Right">
+            <div class="Panel_Components">
+                <div class="Panel_Component" id="IDofRightPanel">
+                    <h1 class="General_Title">
+                        Panel 1
+                    </h1>
+                </div>
+                <div class="Panel_Component" id="IDofRightPanel2">
+                    <h1 class="General_Title">
+                        Panel 2
+                    </h1>
+                </div>
+                <div class="Panel_Component" id="IDofRightPanel3">
+                    <h1 class="General_Title">
+                        Panel 3
+                    </h1>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

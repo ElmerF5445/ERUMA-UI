@@ -12,12 +12,6 @@
 }
 
 :root{
-    --Radius-Level-1: 17px;
-    --Radius-Level-2: 15px;
-    --Radius-Level-3: 12px;
-    --Radius-Level-4: 7px;
-    --Radius-Level-5: 5px;
-
     /* Default values for elements changed by settings at onload */
     --BG-Img-Wallpaper-Main: url(../../Assets/Backgrounds/Wallpaper_Main.png);
 	--BG-Img-Wallpaper-Clock: url(../../Assets/Backgrounds/Clock_Screen.png);

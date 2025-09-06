@@ -1,0 +1,181 @@
+{
+    "App_Pages": [
+        {
+            "Page_File": "Template.html",
+            "Navigation_Bar": [
+                {
+                    "ID": "Navigation_Button_1",
+                    "Name": "Slide 1",
+                    "Icon": "Assets/Icons/ContentByElmerF.png",
+                    "Links": {
+                        "Slide": "Slide_1",
+                        "Ribbon": "Ribbon_1"
+                    }
+                },
+                {
+                    "ID": "Navigation_Button_2",
+                    "Name": "Slide 2",
+                    "Icon": "Assets/Icons/ContentByElmerF.png",
+                    "Links": {
+                        "Slide": "Slide_2",
+                        "Ribbon": "Ribbon_2"
+                    }
+                },
+                {
+                    "ID": "Navigation_Button_3",
+                    "Name": "Slide 3",
+                    "Icon": "Assets/Icons/ContentByElmerF.png",
+                    "Links": {
+                        "Slide": "Slide_3",
+                        "Ribbon": "Ribbon_3"
+                    }
+                }
+            ],
+            "Slides": [
+                {
+                    "ID": "Slide_1",
+                    "Name": "Slide 1",
+                    "Panels": {
+                        "Left": {
+                            "Enabled": true,
+                            "State": "Expanded",
+                            "Title": "Panel Left",
+                            "Toggle": true,
+                            "Linked_ID": "IDofLeftPanel",
+                            "Width": {
+                                "Expanded": "1000px",
+                                "Collapsed": "40px"
+                            }
+                        },
+                        "Center": {
+                            "Margins": true,
+                            "Linked_ID": "IDofCenterPanel"
+                        },
+                        "Right": {
+                            "Enabled": false,
+                            "State": "Collapsed",
+                            "Title": "Panel Right",
+                            "Toggle": true,
+                            "Linked_ID": "IDofRightPanel",
+                            "Width": {
+                                "Expanded": "300px",
+                                "Collapsed": "40px"
+                            }
+                        }   
+                    }
+                },
+                {
+                    "ID": "Slide_2",
+                    "Name": "Slide 2",
+                    "Panels": {
+                        "Left": {
+                            "Enabled": true,
+                            "State": "Collapsed",
+                            "Title": "Panel Left 2",
+                            "Toggle": true,
+                            "Linked_ID": "IDofLeftPanel2",
+                            "Width": {
+                                "Expanded": "500px",
+                                "Collapsed": "40px"
+                            }
+                        },
+                        "Center": {
+                            "Margins": true,
+                            "Linked_ID": "IDofCenterPanel2"
+                        },
+                        "Right": {
+                            "Enabled": true,
+                            "State": "Collapsed",
+                            "Title": "Panel Right 2",
+                            "Toggle": true,
+                            "Linked_ID": "IDofRightPanel2",
+                            "Width": {
+                                "Expanded": "300px",
+                                "Collapsed": "40px"
+                            }
+                        }   
+                    }
+                },
+                {
+                    "ID": "Slide_3",
+                    "Name": "Slide 3",
+                    "Panels": {
+                        "Left": {
+                            "Enabled": true,
+                            "State": "Expanded",
+                            "Title": "Panel Left 3",
+                            "Toggle": true,
+                            "Linked_ID": "IDofLeftPanel3",
+                            "Width": {
+                                "Expanded": "200px",
+                                "Collapsed": "40px"
+                            }
+                        },
+                        "Center": {
+                            "Margins": true,
+                            "Linked_ID": "IDofCenterPanel3"
+                        },
+                        "Right": {
+                            "Enabled": true,
+                            "State": "Collapsed",
+                            "Title": "Panel Right 3",
+                            "Toggle": true,
+                            "Linked_ID": "IDofRightPanel3",
+                            "Width": {
+                                "Expanded": "300px",
+                                "Collapsed": "40px"
+                            }
+                        }   
+                    }
+                }
+            ],
+            "Ribbon": [
+                {
+                    "ID": "Ribbon_1",
+                    "Contents": [
+                        {
+                            "Icon": "Assets/Icons/ContentByElmerF.png",
+                            "Name": "Ribbon 1 Item 1!",
+                            "Onclick": "Page_ChangePage('index.html')"
+                        },
+                        {
+                            "Icon": "Assets/Icons/ContentByElmerF.png",
+                            "Name": "Ribbon 1 Item 2",
+                            "Onclick": "Page_ChangePage('index.html')"
+                        }
+                    ]
+                },
+                {
+                    "ID": "Ribbon_2",
+                    "Contents": [
+                        {
+                            "Icon": "Assets/Icons/ContentByElmerF.png",
+                            "Name": "Ribbon 2 Item 1",
+                            "Onclick": "Page_ChangePage('index.html')"
+                        },
+                        {
+                            "Icon": "Assets/Icons/ContentByElmerF.png",
+                            "Name": "Ribbon 2 Item 2",
+                            "Onclick": "Page_ChangePage('index.html')"
+                        }
+                    ]
+                },
+                {
+                    "ID": "Ribbon_3",
+                    "Contents": [
+                        {
+                            "Icon": "Assets/Icons/ContentByElmerF.png",
+                            "Name": "Ribbon 3 Item 1",
+                            "Onclick": "Page_ChangePage('index.html')"
+                        },
+                        {
+                            "Icon": "Assets/Icons/ContentByElmerF.png",
+                            "Name": "Ribbon 3 Item 2",
+                            "Onclick": "Page_ChangePage('index.html')"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

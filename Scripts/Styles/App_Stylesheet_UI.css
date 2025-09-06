@@ -1006,7 +1006,7 @@ body{
 }
 
 .Tab_Horizontal_Container_Content > *{
-	background-color: red;
+	/* background-color: red; */
 }
 
 /* Horizontal Tabs */

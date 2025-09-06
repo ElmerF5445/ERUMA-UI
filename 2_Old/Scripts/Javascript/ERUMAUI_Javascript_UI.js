@@ -75,12 +75,12 @@ function Navigation_Navigate(ID){
 
 function LoadingScreen_Hide(){
     // Element_Opacity_Set("LoadingScreen", 0);
-    Element_Attribute_Set("Screen_Loading", "Existence", "Nonexistent");
+    Element_Attribute_Set("Screen_Loading", "State", "Inactive");
 }
 
 function LoadingScreen_Show(){
     // Element_Opacity_Set("LoadingScreen", 100);
-	Element_Attribute_Set("Screen_Loading", "Existence", "Existent");
+	Element_Attribute_Set("Screen_Loading", "State", "Active");
 }
 
 function Header_Toggle_PageNavigation(){

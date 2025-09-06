@@ -1,43 +1,36 @@
 window.addEventListener("DOMContentLoaded", Initial_Start);
 
-var App_Path = window.location.pathname;
-var App_CurrentPageName = App_Path.split("/").pop();
-
-// Start of initialization
-var App_Properties = {};
-var Page_Properties = {};
 function Initial_Start(){
-    App_Properties = Data_Import_FromPath("Assets/Resource_Files/App_Properties.json", "JSON");
-    console.log(App_Properties);
-    Initial_Fetch_Properties();
-    console.log(Page_Properties);
+    setTimeout(LoadingScreen_Hide, 200);
     Initial_Properties_Set();
 }
 
-function Initial_Fetch_Properties(){
-    for (a = 0; a < App_Properties.App_Pages.length; a++){
-        if (App_Properties.App_Pages[a].Page_File == App_CurrentPageName){
-            Page_Properties = App_Properties.App_Pages[a].Page_Properties;
-            break;
-        }
-    }
-}
-
 function Initial_Properties_Set(){
-    Element_InnerText_Set("Window_Title", `${Page_Properties.Window.Title.Primary} ${Page_Properties.Window.Title.Separator} ${Page_Properties.Window.Title.Secondary}`);
-    Element_Attribute_Set("Window_Icon", "href", Page_Properties.Window.Title.Icon);
-    if (Page_Properties.Header.Enabled == true){
-        if (Element_isntNull("Header") == true){
-            Element_Attribute_Set("Header", "State", "Enabled");
-            Element_InnerHTML_Set("Header_Navigation_Title", Page_Properties.Header.Navigation.Title);
-            Element_Attribute_Set("Header_Navigation_Icon", "src", Page_Properties.Header.Navigation.Icon);
+    const images = Array.from(document.getElementsByTagName("img"));
+
+    images.forEach(img => {
+        // Set opacity using .style property (safer for existing inline styles)
+        img.style.opacity = "0";
+
+        // Set attributes. draggable and loading are good candidates for HTML directly
+        // If these are always set, consider adding them to your HTML markup instead.
+        img.setAttribute("draggable", "false");
+        img.setAttribute("loading", "lazy"); // Consider if this is appropriate for all images
+
+        // Add load listener
+        img.addEventListener("load", function() {
+            // `this` refers to the img element that loaded
+            console.log(`Image loaded: ${this.src}, current opacity: ${this.style.opacity}`);
+            this.style.opacity = "1"; // Set opacity to 1 (100%)
+            // Optional: Add a transition for a fade-in effect
+            // this.style.transition = "opacity 0.5s ease-in-out";
+        });
+
+        // Handle images that might already be loaded (e.g., from cache)
+        // This is important because 'load' event might not fire for cached images.
+        if (img.complete) {
+             console.log(`Image already complete (cached): ${img.src}`);
+             img.style.opacity = "1";
         }
-    } else {
-        if (Element_isntNull("Header") == true){
-            Element_Attribute_Set("Header", "State", "Disabled");
-        }
-    }
-    
-    Element_InnerHTML_Set("Panel_Toggle_Left_Text", Page_Properties.Panels.Left.Title);
-    Element_InnerHTML_Set("Panel_Toggle_Right_Text", Page_Properties.Panels.Right.Title);
+    })
 }

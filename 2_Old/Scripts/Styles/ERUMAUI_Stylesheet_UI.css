@@ -1,0 +1,1418 @@
+*{
+    transition: all var(--Element-Transition-Delay), outline 0s;
+    outline: var(--Debug-ElementOutline);
+    outline-width: var(--Element-Border-Width) !important;
+    -webkit-tap-highlight-color: transparent;
+	border-width: var(--Element-Border-Width);
+}
+
+h1, h2, h3, h4, h5, h6, p, img{
+    margin: 0;
+    user-select: none;
+}
+
+button{
+    border: unset;
+    background-color: unset;
+    cursor: pointer;
+}
+
+button:focus{
+    outline: dotted var(--Debug-ElementOutline) var(--Element-Outline-Width);
+}
+
+button:active{
+    outline: solid var(--Debug-ElementOutline) var(--Element-Outline-Width);
+}
+
+*[Text_Selectable], *[Text_Selectable] *{
+    user-select: text;
+}
+
+*[Text_Unselectable], *[Text_Unselectable] *{
+    user-select: none;
+}
+
+*[Margin], *[Margin] *{
+    margin: 10px;
+}
+
+*[Margin_Vertical], *[Margin_Vertical] *{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+*[Margin_Horizontal], *[Margin_Horizontal] *{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+*[Fill_Horizontal], *[Fill_Horizontal] *{
+    width: -webkit-fill-available;
+}
+
+*[Fill_Vertical], *[Fill_Vertical] *{
+    height: -webkit-fill-available;
+}
+
+*[Border="None_Default"]{
+    border: unset !important;
+}
+
+*[Border="None_Hover"], *[Border="None_Hover"]:hover{
+    border: unset !important;
+}
+
+*[Border="None_Active"], *[Border="None_Active"]:hover, *[Border="None_Active"]:active{
+    border: unset !important;
+}
+
+*[Border="None_Focus"], *[Border="None_Focus"]:hover, *[Border="None_Focus"]:active, *[Border="None_Focus"]:focus{
+    border: unset !important;
+    outline: unset !important;
+}
+
+*[Border="None_All"], *[Border="None_All"]:hover, *[Border="None_All"]:active, *[Border="None_All"]:focus{
+    border: unset !important;
+    outline: unset !important;
+}
+
+*[Background="None_Default"]{
+    background: unset !important;
+}
+
+*[Background="None_Hover"], *[Background="None_Hover"]:hover{
+    background: unset !important;
+}
+
+*[Background="None_Active"], *[Background="None_Active"]:hover, *[Background="None_Active"]:active{
+    background: unset !important;
+}
+
+*[Background="None_Focus"], *[Background="None_Focus"]:hover, *[Background="None_Focus"]:active, *[Background="None_Focus"]:focus{
+    background: unset !important;
+}
+
+*[Background="None_All"], *[Background="None_All"]:hover, *[Background="None_All"]:active, *[Background="None_All"]:focus{
+    background: unset !important;
+}
+
+body[Animations = "Disabled"] *{
+	animation-duration: 0s !important;
+	animation-fill-mode: forwards !important;
+	animation-iteration-count: 1 !important;
+}
+
+body[Transitions = "Disabled"] *{
+	transition: all 0s !important;
+}
+
+body[SmoothScrolling = "Disabled"] *{
+	scroll-behavior: unset;
+}
+
+a{
+	text-decoration: none;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+	border-radius: 10px;
+	z-index: 75;
+	transition: var(--Element-Transition-Delay);
+}
+::-webkit-scrollbar:hover{
+	/* width: 10px; */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background-color: var(--BG-Color-Scrollbar);
+	border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background-color: var(--BG-Color-Scrollbar-Thumb);
+	border-radius: 10px;
+	
+	transition: var(--Element-Transition-Delay);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--BG-Color-Scrollbar-Thumb-Hover);
+	border-radius: 10px;
+	/* width: 50px; */
+	/* height: 50px; */
+}
+/* Selection color */
+::selection{
+	background-color: var(--BG-Color-Selection);
+}
+
+body{
+    /* background-color: black; */
+    margin: 0;
+	background-color: var(--BG-Color-General);
+}
+
+.General_Title{
+    font-family: var(--Text-Font-Primary);
+    color: var(--Text-Color);
+}
+
+.General_Paragraph{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--Text-Color);
+}
+
+.General_Button, .General_Button[Secondary]{
+    border-style: solid;
+    border-color: var(--BG-Color-Button-Secondary-Border);
+    border-width: var(--Element-Border-Width);
+    background-color: var(--BG-Color-Button-Secondary);
+    font-family: var(--Text-Font-Secondary);
+    color: var(--BG-Color-Button-Secondary-Text);
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+    align-items: center;
+    font-size: 15px;
+}
+
+.General_Button:hover, .General_Button[Secondary]:hover{
+    border-color: var(--BG-Color-Button-Secondary-Border-Hover);
+    background-color: var(--BG-Color-Button-Secondary-Hover);
+    color: var(--BG-Color-Button-Secondary-Text-Hover);
+    box-shadow: var(--Element-BoxShadow);
+}
+
+.General_Button:focus, .General_Button[Secondary]:focus{
+    border-color: var(--BG-Color-Button-Secondary-Border-Focus);
+    background-color: var(--BG-Color-Button-Secondary-Focus);
+    color: var(--BG-Color-Button-Secondary-Text-Focus);
+}
+
+.General_Button:active, .General_Button[Secondary]:active{
+    border-color: var(--BG-Color-Button-Secondary-Border-Active);
+    background-color: var(--BG-Color-Button-Secondary-Active);
+    color: var(--BG-Color-Button-Secondary-Text-Active);
+}
+
+.General_Button[Primary]{
+    border-style: solid;
+    border-color: var(--BG-Color-Button-Primary-Border);
+    background-color: var(--BG-Color-Button-Primary);
+    font-family: var(--Text-Font-Secondary);
+    color: var(--BG-Color-Button-Primary-Text);
+    border-radius: 7px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.General_Button[Primary]:hover{
+    border-color: var(--BG-Color-Button-Primary-Border-Hover);
+    background-color: var(--BG-Color-Button-Primary-Hover);
+    color: var(--BG-Color-Button-Primary-Text-Hover);
+    box-shadow: var(--Element-BoxShadow);
+}
+
+.General_Button[Primary]:focus{
+    border-color: var(--BG-Color-Button-Primary-Border-Focus);
+    background-color: var(--BG-Color-Button-Primary-Focus);
+    color: var(--BG-Color-Button-Primary-Text-Focus);
+}
+
+
+.General_Button[Primary]:active{
+    border-color: var(--BG-Color-Button-Primary-Border-Active);
+    background-color: var(--BG-Color-Button-Primary-Active);
+    color: var(--BG-Color-Button-Primary-Text-Active);
+}
+
+.General_Button[Icon_Left]{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+}
+
+.General_Button[Icon_Right]{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 10px;
+}
+
+.General_Button[Icon]{
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.General_Button_Icon{
+    height: 20px;
+}
+
+
+
+.Header{
+    position: fixed;
+    width: 100%;
+    height: 40px;
+    background-color: var(--BG-Color-Overlay-Header);
+    /* background-color: white; */
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    
+}
+
+.Header[State = "Enabled"]{
+    display: grid;
+    opacity: 100%;
+}
+
+.Header[State = "Disabled"]{
+    display: none;
+    opacity: 0%;
+}
+
+.Header_Navigation{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    width: auto;
+    height: 100%;
+    align-items: center;
+    grid-gap: 5px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.Header_Navigation:hover{
+    background-color: var(--BG-Color-Hover);
+}
+
+.Header_Navigation_Icon{
+    height: 25px;
+    padding: 5px;
+}
+
+.Header_Navigation_Title{
+    font-family: var(--Text-Font-Primary);
+    color: var(--Text-Color);
+    font-size: 20px;
+}
+
+.Header_Content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Header_Title{
+    font-family: var(--Text-Font-Primary);
+    color: var(--Text-Color);
+    font-size: 17px;
+}
+
+.Header_Status{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+    align-items: center;
+    grid-gap: 5px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.Header_Status:hover{
+    background-color: var(--BG-Color-Hover);
+}
+
+.Header_Status *{
+    margin-left: 5px;
+}
+
+.Header_Status_Icon{
+    height: 25px;
+    padding: 5px;
+}
+
+.Header_Status_Text{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--Text-Color);
+    /* font-size: 20px; */
+}
+
+.Ribbon{
+    width: 100%;
+    height: 25px;
+    position: fixed;
+    background-color: var(--BG-Color-Overlay-Ribbon);
+    top: 35px;
+}
+
+.Ribbon_Sections{
+    width: 100%;
+    position: relative;
+}
+
+.Ribbon_Section{
+    animation-duration: var(--Element-Transition-Delay);
+    animation-fill-mode: forwards;
+    position: absolute;
+    width: -webkit-fill-available;
+    flex-direction: row;
+}
+
+.Ribbon_Section, .Ribbon_Section[State = "Inactive"]{
+    display: none;
+    opacity: 0%;
+    pointer-events: none;
+    animation-name: Ribbon_Section_Exit;
+}
+
+.Ribbon_Section[State = "Active"]{
+    display: flex;
+    flex-direction: row;
+    opacity: 100%;
+    pointer-events: all;
+    animation-name: Ribbon_Section_Entrance;
+}
+
+@keyframes Ribbon_Section_Entrance{
+    0%{
+        display: flex;
+        opacity: 0%;
+        pointer-events: none;
+        /* transform: translateY(15px); */
+    }
+    100%{
+        display: flex;
+        opacity: 100%;
+        pointer-events: all;
+        /* transform: translateY(0px); */
+    }
+}
+
+@keyframes Ribbon_Section_Exit{
+    0%{
+        display: flex;
+        opacity: 100%;
+        pointer-events: none;
+        /* transform: translateY(0px); */
+    }
+    100%{
+        display: none;
+        opacity: 0%;
+        pointer-events: none;
+        /* transform: translateY(15px); */
+    }
+}
+
+
+.Ribbon_Section_Item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-gap: 5px;
+}
+
+.Ribbon_Section_Item:hover{
+    background-color: var(--BG-Color-Hover);
+}
+
+.Ribbon_Section_Item_Icon{
+    height: 15px;
+    padding: 5px;
+}
+
+.Ribbon_Section_Item_Text{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--Text-Color);
+    padding-right: 10px;
+}
+
+.Panels_Toggles{
+    width: 100%;
+    height: 35px;
+    position: fixed;
+    top: 60px;
+    z-index: 100;
+    pointer-events: none;
+}
+
+
+
+.Panel_Toggle{
+    display: grid;
+    align-items: center;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    grid-gap: 5px;
+    overflow-x: hidden;
+    user-select: none;
+    pointer-events: all;
+}
+
+.Panel_Toggle:hover{
+    background-color: var(--BG-Color-Hover);
+    cursor: pointer;
+}
+
+.Panel_Toggle[Left]{
+    left: 0;
+    width: var(--Panel-Left-Width-Expanded);
+    grid-template-columns: auto 1fr;
+    text-align: right;
+}
+
+.Panel_Toggle[Left][Config = "WithNavigation"], .Panel_Toggle[Left][Config = "WithNavigation"][State_Navigation = "Collapsed"]{
+    margin-left: var(--Panel-Navigation-Rail-Width);
+}
+
+.Panel_Toggle[Left][Config = "WithNavigation"][PushableBy_Navigation = "True"][State_Navigation = "Expanded"]{
+    margin-left: var(--Panel-Navigation-Rail-Width-Expanded);
+}
+
+.Panel_Toggle[Right]{
+    right: 0;
+    width: var(--Panel-Right-Width-Expanded);
+    grid-template-columns: 1fr auto;
+    text-align: left;
+}
+
+.Panel_Toggle[Left][State = "Collapsed"]{
+    width: var(--Panel-Left-Width-Collapsed)
+}
+.Panel_Toggle[Left][State = "Expanded"]{
+    width: var(--Panel-Left-Width-Expanded)
+}
+
+.Panel_Toggle[Right][State = "Collapsed"]{
+    width: var(--Panel-Right-Width-Collapsed)
+}
+.Panel_Toggle[Right][State = "Expanded"]{
+    width: var(--Panel-Right-Width-Expanded)
+}
+
+.Panel_Toggle[State = "Disabled"]{
+    display: none;
+}
+
+.Panel_Toggle_Text{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--Text-Color);
+    font-size: 15px;
+    overflow-x: hidden;
+    white-space: nowrap;
+}
+
+.Panel_Toggle_Text[State = "Collapsed"]{
+    opacity: 0%;
+}
+.Panel_Toggle_Text[State = "Expanded"]{
+    opacity: 100%;
+}
+
+.Panel_Toggle_Icon{
+    height: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.Panels{
+    width: 100%;
+    height: calc(100% - 60px);
+    position: fixed;
+    top: 60px;
+    background-color: var(--BG-Color-MainView);
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    
+}
+
+.Panels[Config = "WithNavigation"][State_Navigation = "Collapsed"], .Panels[Config = "WithNavigation"]{
+    margin-left: var(--Panel-Navigation-Rail-Width);
+    width: calc(100% - var(--Panel-Navigation-Rail-Width));
+}
+
+.Panels[Config = "WithNavigation"][State_Navigation = "Expanded"][PushableBy_Navigation = "True"]{
+    margin-left: var(--Panel-Navigation-Rail-Width-Expanded);
+    width: calc(100% - var(--Panel-Navigation-Rail-Width-Expanded));
+}
+
+.Panel_Left, .Panel_Right{
+    background-color: var(--BG-Color-General-Menus);
+    padding-top: 35px;
+    width: var(--Panel-Left-Width-Expanded);
+    overflow-x: hidden;
+}
+
+.Panel_Left[State = "Disabled"], .Panel_Right[State = "Disabled"]{
+    width: 0px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.Panel_Left[State = "Expanded"]{
+    width: var(--Panel-Left-Width-Expanded);
+}
+
+.Panel_Left[State = "Collapsed"]{
+    width: var(--Panel-Left-Width-Collapsed);
+}
+
+.Panel_Left[State = "Collapsed"] *, .Panel_Right[State = "Collapsed"] *{
+    opacity: 0%;
+    pointer-events: none;
+}
+
+.Panel_Right[State = "Expanded"]{
+    width: var(--Panel-Right-Width-Expanded);
+}
+
+.Panel_Right[State = "Collapsed"]{
+    width: var(--Panel-Right-Width-Collapsed);
+}
+
+.Panel_Center{
+    background-color: var(--BG-Color-MainView);
+    padding-top: var(--Panel-Center-Padding-Top);
+    padding-bottom: var(--Panel-Center-Padding-Bottom);
+    padding-left: var(--Panel-Center-Padding-Left);
+    padding-right: var(--Panel-Center-Padding-Right);
+    width: -webkit-fill-available;
+}
+
+.Panel_Left, .Panel_Center, .Panel_Right{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.Panel_Center > .Panel_Component{
+    
+}
+
+.Panel_Components{
+    width: -webkit-fill-available;
+    position: relative;
+    /* overflow-x: hidden; */
+}
+
+.Panel_Component{
+    animation-duration: var(--Element-Transition-Delay);
+    animation-fill-mode: forwards;
+    position: absolute;
+    width: -webkit-fill-available;
+}
+
+.Panel_Component, .Panel_Component[State = "Inactive"]{
+    opacity: 0%;
+    pointer-events: none;
+    display: none;
+    animation-name: Panel_Component_Exit;
+    /* position: absolute; */
+}
+
+.Panel_Component[State = "Active"]{
+    opacity: 100%;
+    pointer-events: all;
+    display: block;
+    animation-name: Panel_Component_Entrance;
+}
+
+@keyframes Panel_Component_Entrance{
+    0%{
+        display: block;
+        opacity: 0%;
+        pointer-events: none;
+        /* transform: translateY(15px); */
+    }
+    100%{
+        display: block;
+        opacity: 100%;
+        pointer-events: all;
+        /* transform: translateY(0px); */
+    }
+}
+
+@keyframes Panel_Component_Exit{
+    0%{
+        display: block;
+        opacity: 100%;
+        pointer-events: none;
+        /* transform: translateY(0px); */
+    }
+    100%{
+        display: none;
+        opacity: 0%;
+        pointer-events: none;
+        /* transform: translateY(15px); */
+    }
+}
+
+.Accordion{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.Accordion[State = "Expanded"]{
+    grid-template-rows: auto 1fr;
+}
+
+.Accordion[State = "Expanded"] > .Accordion_Content{
+    max-height: 100%;
+    pointer-events: all
+}
+
+.Accordion[State = "Expanded"] > .Accordion_Content > *{
+    opacity: 100%;
+    transform: translateY(0px);
+}
+
+.Accordion[State = "Expanded"] > .Accordion_Title > .Accordion_Title_Icon_Arrow{
+    transform: rotate(0deg);
+}
+
+.Accordion[State = "Collapsed"]{
+    grid-template-rows: auto 0fr;
+}
+
+.Accordion[State = "Collapsed"] > .Accordion_Content{
+    max-height: 0%;
+    pointer-events: none;
+}
+
+
+.Accordion[State = "Collapsed"] > .Accordion_Content > *{
+    opacity: 0%;
+    transform: translateY(-10px);
+}
+
+.Accordion[State = "Collapsed"] > .Accordion_Title > .Accordion_Title_Icon_Arrow{
+    transform: rotate(180deg);
+}
+
+.Accordion_Content{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.Accordion_Title{
+    display: grid;
+    grid-template-columns: 1fr auto auto auto auto auto;
+    align-items: center;
+    text-align: left;
+    padding-left: unset;
+}
+
+.Accordion_Title_Text{
+    font-family: var(--Text-Font-Primary);
+    color: var(--Text-Color);
+    
+}
+
+.Accordion_Title_Icon{
+    height: 20px;
+    padding: 10px;
+}
+
+.Dropdown{
+	position: relative;
+}
+
+.Dropdown_Button{
+	font-family: var(--Text-Font-Secondary);
+	color: var(--BG-Color-Button-Secondary-Text);
+	padding: 10px;
+	border-radius: 5px;
+	user-select: none;
+	cursor: pointer;
+	transition: var(--Element-Transition-Delay);
+	display: grid;
+	grid-template-columns: 1fr 30px;
+	align-items: center;
+    text-align: left;
+    font-size: 15px;
+
+    border: solid var(--BG-Color-Button-Secondary-Border) var(--Element-Border-Width);
+    background-color: var(--BG-Color-Button-Secondary);
+}
+
+.Dropdown[State="Inactive"] > .Dropdown_Button:hover{
+	border-color: var(--BG-Color-Button-Secondary-Border-Hover);
+	background-color: var(--BG-Color-Button-Secondary-Hover);
+	box-shadow: var(--Element-BoxShadow);
+}
+
+.Dropdown[State="Inactive"] > .Dropdown_Button:focus{
+	border-color: var(--BG-Color-Button-Secondary-Border-Focus);
+	background-color: var(--BG-Color-Button-Secondary-Focus);
+	box-shadow: var(--Element-BoxShadow);
+}
+
+.Dropdown[State="Inactive"] > .Dropdown_Button:active{
+	border-color: var(--BG-Color-Button-Secondary-Border-Active);
+	background-color: var(--BG-Color-Button-Secondary-Active);
+}
+
+.Dropdown[State="Active"] > .Dropdown_Button{
+    border-bottom-left-radius: 0px;
+}
+
+.Dropdown[State="Active"] > .Dropdown_Button:hover{
+
+}
+
+
+.Dropdown_Button_Arrow{
+	width: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.Dropdown_Button[State="Active"]:active > .Dropdown_Button_Arrow{
+	transform: translateY(-5px);
+}
+
+.Dropdown_Button[State="Inactive"]:active > .Dropdown_Button_Arrow{
+	transform: translateY(5px);
+}
+
+.Dropdown[State="Active"] > .Dropdown_Button > .Dropdown_Button_Arrow{
+	transform: rotate(180deg);
+}
+
+.Dropdown[State = "Active"] > .Dropdown_List{
+    opacity: 100%;
+    transform: translateY(-2px);
+    pointer-events: all;
+    display: flex;
+}
+
+.Dropdown[State = "Inactive"] > .Dropdown_List{
+    opacity: 0%;
+    transform: translateY(-15px);
+    pointer-events: none;
+    display: flex;
+}
+
+.Dropdown_List{
+	border-radius: 0px 0px 5px 5px;
+	padding: 3px;
+	position: absolute;
+	opacity: 0%;
+    user-select: none;
+	transform: translateY(-15px);
+	overflow-y: auto;
+	height: auto;
+	max-height: 500px;
+	min-width: 250px;
+	transition: var(--Element-Transition-Delay);
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: var(--BG-Color-Button-Secondary);
+    border: solid var(--BG-Color-Button-Secondary-Border) var(--Element-Border-Width);
+    border-top-style: dashed;
+}
+
+.Dropdown[State = "Inactive"] > .Dropdown_List > .Dropdown_List_Item{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.Dropdown_List_Item{
+	font-family: var(--Text-Font-Secondary);
+	color: var(--BG-Color-Button-Secondary-Text);
+	margin: 0;
+	user-select: none;
+	cursor: pointer;
+	padding: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border: solid transparent var(--Element-Border-Width);
+	transition: var(--Element-Transition-Delay);
+	border-radius: 3px;
+    font-size: 15px;
+    text-align: left;
+}
+
+.Dropdown_List_Item:hover{
+	background-color: var(--BG-Color-Button-Secondary-Hover);
+	border: solid var(--BG-Color-Button-Secondary-Border-Hover) var(--Element-Border-Width);
+}
+
+.Dropdown_List_Item:focus{
+	background-color: var(--BG-Color-Button-Secondary-Focus);
+	border: solid var(--BG-Color-Button-Secondary-Border-Focus) var(--Element-Border-Width);
+}
+
+.Dropdown_List_Item:active{
+	background-color: var(--BG-Color-Button-Secondary-Active);
+	border: solid var(--BG-Color-Button-Secondary-Border-Active) var(--Element-Border-Width);
+}
+
+.Toggle{
+    cursor: pointer;
+    /* border: solid transparent var(--Element-Border-Width); */
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    text-align: left;
+    font-family: var(--Text-Font-Secondary);
+    color: var(--BG-Color-Button-Secondary-Text);
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 7px;
+    /* padding-left: unset; */
+    background-color: var(--BG-Color-Button-Secondary);
+    border: solid var(--BG-Color-Button-Secondary-Border) var(--Element-Border-Width);
+    color: var(--BG-Color-Button-Secondary-Text);
+    margin-bottom: 10px;
+}
+
+.Toggle:hover{
+    background-color: var(--BG-Color-Button-Secondary-Hover);
+    border: solid var(--BG-Color-Button-Secondary-Border-Hover) var(--Element-Border-Width);
+    color: var(--BG-Color-Button-Secondary-Text-Hover);
+    box-shadow: var(--Element-BoxShadow);
+}
+
+.Toggle:focus{
+    background-color: var(--BG-Color-Button-Secondary-Focus);
+    border: solid var(--BG-Color-Button-Secondary-Border-Focus) var(--Element-Border-Width);
+    color: var(--BG-Color-Button-Secondary-Text-Focus);
+}
+
+.Toggle:active{
+    background-color: var(--BG-Color-Button-Secondary-Active);
+    border: solid var(--BG-Color-Button-Secondary-Border-Active) var(--Element-Border-Width);
+    color: var(--BG-Color-Button-Secondary-Text-Active);
+}
+
+.Toggle_Switch{
+    height: 25px;
+    width: auto;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    /* background-color: var(--BG-Color-Button-Secondary); */
+}
+
+.Toggle[Style_Switch] > .Toggle_Switch{
+    background-color: var(--BG-Color-Button-Secondary);
+    width: calc(50px + var(--Element-Border-Width) + var(--Element-Border-Width));
+    aspect-ratio: unset;
+    border: solid var(--BG-Color-Button-Secondary-Border) var(--Element-Border-Width);
+}
+
+.Toggle_Switch_Head{
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: var(--BG-Color-Button-Secondary);
+    transform: translateX(calc(var(--Element-Border-Width) * -1)) translateY(calc(var(--Element-Border-Width) * -1));
+    border: solid var(--BG-Color-Button-Secondary-Border) var(--Element-Border-Width);
+}
+
+
+.Toggle[State="Active"] > .Toggle_Switch > .Toggle_Switch_Head{
+    background-color: var(--BG-Color-Button-Primary);
+    border: solid var(--BG-Color-Button-Primary-Border) var(--Element-Border-Width);
+}
+.Toggle[State="Inactive"] > .Toggle_Switch > .Toggle_Switch_Head{
+    background-color: var(--BG-Color-Button-Secondary);
+    border: solid var(--BG-Color-Button-Secondary-Border) var(--Element-Border-Width);
+}
+
+.Toggle_Title{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+.Toggle[Style_Switch] > .Toggle_Switch{
+    position: relative;
+}
+
+.Toggle[Style_Switch] > .Toggle_Switch > .Toggle_Switch_Head{
+    background-color: var(--BG-Color-Button-Secondary-Focus);
+    border: solid var(--BG-Color-Button-Primary-Border) var(--Element-Border-Width);
+    transform: translateX(calc(var(--Element-Border-Width) * -1)) translateY(calc(var(--Element-Border-Width) * -1));
+    position: absolute;
+    right: calc(25px + var(--Element-Border-Width));
+}
+
+.Toggle[Style_Switch][State="Active"] > .Toggle_Switch > .Toggle_Switch_Head{
+    background-color: var(--BG-Color-Button-Primary);
+    border: solid var(--BG-Color-Button-Primary-Border) var(--Element-Border-Width);
+    transform: translateX(calc(var(--Element-Border-Width) * -1)) translateY(calc(var(--Element-Border-Width) * -1));
+    position: absolute;
+    right: calc(0px - var(--Element-Border-Width));
+}
+
+.Radio{
+    display: flex;
+    flex-direction: column;
+}
+
+.Radio_Button{
+    background-color: var(--BG-Color-Button-Secondary);
+    border: solid var(--BG-Color-Button-Secondary-Border) var(--Element-Border-Width);
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.Radio_Button:first-child{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-style: dashed;
+}
+.Radio_Button:not(:first-child){
+    border-bottom-style: dashed;
+    border-top-style: unset;
+}
+.Radio_Button:last-child{
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-style: solid;
+}
+
+.Radio_Button:hover{
+    background-color: var(--BG-Color-Button-Secondary-Hover);
+    border-color: var(--BG-Color-Button-Secondary-Border-Hover);
+    color: var(--BG-Color-Button-Secondary-Text-Hover);
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    /* border-radius: 7px; */
+}
+
+.Radio_Button:focus{
+    background-color: var(--BG-Color-Button-Secondary-Focus);
+    border-color: var(--BG-Color-Button-Secondary-Border-Focus);
+    color: var(--BG-Color-Button-Secondary-Text-Focus);
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    /* border-radius: 7px; */
+}
+
+.Radio_Button:active{
+    background-color: var(--BG-Color-Button-Secondary-Active);
+    border-color: var(--BG-Color-Button-Secondary-Border-Active);
+    color: var(--BG-Color-Button-Secondary-Text-Active);
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    /* border-radius: 7px; */
+}
+
+.Radio_Button_Text{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--BG-Color-Button-Secondary-Text);
+    font-size: 15px;
+    text-align: left;
+}
+
+.Radio_Button_Indicator{
+    width: 25px;
+    height: 25px;
+    border-radius: 50px;
+    background-color: var(--BG-Color-Button-Secondary);
+    border: solid var(--BG-Color-Button-Secondary-Border) var(--Element-Border-Width);
+}
+
+.Radio_Button_Indicator:hover{
+    background-color: var(--BG-Color-Button-Secondary-Hover);
+    border: solid var(--BG-Color-Button-Secondary-Border-Hover) var(--Element-Border-Width);
+}
+
+.Radio_Button_Indicator:focus{
+    background-color: var(--BG-Color-Button-Secondary-Focus);
+    border: solid var(--BG-Color-Button-Secondary-Border-Focus) var(--Element-Border-Width);
+}
+
+.Radio_Button_Indicator:active{
+    background-color: var(--BG-Color-Button-Secondary-Active);
+    border: solid var(--BG-Color-Button-Secondary-Border-Active) var(--Element-Border-Width);
+}
+
+.Radio_Button[State="Active"] > .Radio_Button_Indicator{
+    background-color: var(--BG-Color-Button-Primary);
+    border: solid var(--BG-Color-Button-Primary-Border) var(--Element-Border-Width);
+}
+
+.Input_Text, .Input_Text_Long{
+    background-color: var(--BG-Color-Button-Secondary);
+    border: solid var(--BG-Color-Button-Secondary-Border) var(--Element-Border-Width);
+    color: var(--BG-Color-Button-Secondary-Text);
+    font-size: 15px;
+    font-family: var(--Text-Font-Secondary);
+    padding: 10px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    transition: var(--Element-Transition-Delay);
+    transition: all var(--Element-Transition-Delay) ease-in-out, height 0s;
+	resize: vertical;
+    min-height: 23px;
+}
+
+.Input_Text:hover, .Input_Text_Long:hover{
+    background-color: var(--BG-Color-Button-Secondary-Hover);
+    border: solid var(--BG-Color-Button-Secondary-Border-Hover) var(--Element-Border-Width);
+    color: var(--BG-Color-Button-Secondary-Text-Hover);
+    box-shadow: var(--Element-BoxShadow);
+}
+
+.Input_Text:focus, .Input_Text_Long:focus{
+    background-color: var(--BG-Color-Button-Secondary-Focus);
+    border: solid var(--BG-Color-Button-Secondary-Border-Focus) var(--Element-Border-Width);
+    color: var(--BG-Color-Button-Secondary-Text-Focus);
+}
+
+.Input_Text:active, .Input_Text_Long:active{
+    background-color: var(--BG-Color-Button-Secondary-Active);
+    border: solid var(--BG-Color-Button-Secondary-Border-Active) var(--Element-Border-Width);
+    color: var(--BG-Color-Button-Secondary-Text-Active);
+}
+
+.Input_Label{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--Text-Color);
+    margin: 0;
+}
+
+.Input_Form[Composition = "Linear"]{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Input_Form[Composition = "Linear"] > .Input_Label{
+    margin-bottom: 5px;
+}
+
+.Input_Form[Composition = "ByTwo"]{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+}
+
+.Input_Form > *[Override_Form_Composition]{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.Bar_Dynamic, .Loader_Bar{
+    width: 100%;
+    height: 5px;
+    background-color: var(--BG-Color-General);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.Bar_Dynamic_Bar, .Loader_Bar_Component{
+    width: 50%;
+    height: 100%;
+    background-color: var(--Accent-Color);
+    border-radius: 25px;
+}
+
+.Bar_Dynamic[State = "Loading"] > .Bar_Dynamic_Bar, .Loader_Bar_Component{
+    animation-name: Loader_Bar;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+.Bar_Dynamic[State = "Progress"] > .Bar_Dynamic_Bar{
+    width: 0%;
+}
+
+@keyframes Loader_Bar {
+    0%{
+        width: 0%;
+        transform: translateX(0%);
+    }
+    50%{
+        width: 100%;
+        transform: translateX(0%);
+    }
+    100%{
+        width: 100%;
+        transform: translateX(100%);
+    }
+}
+
+.Loader_Square{
+    padding: 10px;
+    width: auto;
+    height: auto;
+    max-height: 50px;
+    max-width: 50px;
+    /* border: solid var(--Accent-Color) 2px; */
+    display: grid;
+    grid-template-columns: auto auto;
+    /* grid-gap: 5px; */
+    align-items: center;
+    justify-content: center;
+    animation-name: Loader_Square_Animate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+.Loader_Square_Component{
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    border-radius: 30px;
+    background-color: var(--Accent-Color);
+    animation-name: Loader_Square_Component_Animate;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes Loader_Square_Animate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(90deg);
+    }
+    /* 50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    } */
+}
+
+@keyframes Loader_Square_Component_Animate {
+    0%{
+        margin: 5px;
+    }
+    50%{
+        margin: 2px;
+    }
+    100%{
+        margin: 5px;
+    }
+}
+
+.Navigation{
+    width: var(--Panel-Navigation-Rail-Width);
+    background-color: var(--BG-Color-Overlay-Sidebar);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    height: calc(100% - 60px);
+    margin-top: 60px;
+    position: absolute;
+}
+
+.Navigation[State = "Collapsed"]{
+    width: var(--Panel-Navigation-Rail-Width);
+}
+
+.Navigation[State = "Expanded"]{
+    width: var(--Panel-Navigation-Rail-Width-Expanded);
+}
+
+.Navigation_Button{
+    border: unset;
+    border-radius: 0;
+    z-index: 160;
+    background-color: transparent;
+    overflow-x: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    height: 45px;
+    width: 100%;
+}
+
+.Navigation_Button:hover{
+    cursor: pointer;
+    background-color: var(--BG-Color-Button-Secondary-Hover);
+}
+
+.Navigation_Button[State = "Active"]{
+    padding-left: 15px;
+}
+
+.Navigation_Button_Icon{
+    height: 25px;
+    z-index: 1;
+    padding-left: 2px;
+}
+
+.Navigation_Toggle{
+    height: 37px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.Navigation_Toggle > .Navigation_Button_Icon{
+    height: 25px;
+    
+}
+
+.Navigation_Button_Text{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--Text-Color);
+    text-align: left;
+    z-index: 1;
+    text-overflow: clip;
+    white-space: nowrap;
+    opacity: 0%;
+}
+
+.Navigation[State = "Expanded"] > .Navigation_Button > .Navigation_Button_Text{
+    opacity: 100%;
+}
+
+.Navigation_Button_Pill{
+    position: absolute;
+    background-color: var(--Accent-Color);
+    width: 4px;
+    height: 0;
+    border-radius: 25px;
+    left: 5px;
+    z-index: 1;
+}
+
+.Navigation_Button[State = "Active"] > .Navigation_Button_Pill{
+    height: 35px;
+}
+
+.Navigation_Button_Background{
+    position: absolute;
+    background-color: var(--Accent-Color);
+    opacity: 25%;
+    height: 100%;
+    z-index: 0;
+    width: 0%;
+}
+
+.Navigation_Button[State = "Active"] > .Navigation_Button_Background{
+    width: 100%;
+}
+.Screen_Loading{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--BG-Color-LoadingScreen);
+    z-index: 150;
+    pointer-events: all;
+    transition-duration: 0.6s;
+}
+
+.Screen_Loading[State = "Inactive"]{
+    opacity: 0%;
+    pointer-events: none;
+    transition-duration: 0.6s;
+}
+
+.Screen_Loading_Splash{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr auto 1fr auto;
+}
+
+.Screen_Loading_Splash_Window{
+    width: 650px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.Screen_Loading_Splash_Window_Loader{
+    height: 250%;
+    width: 250px;
+    background-color: aliceblue;
+    position: absolute;
+    transform: rotate(-45deg);
+    opacity: 25%;
+    animation-name: Screen_Loading_Splash_Window_Loader;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes Screen_Loading_Splash_Window_Loader {
+    0%{
+        transform: translateX(500%) rotate(-45deg);
+    }
+    100%{
+        transform: translateX(-500%) rotate(-45deg);
+    }
+}
+
+.Screen_Loading_Splash_Window_Image{
+    width: 100%;
+    object-fit: fill;
+}
+
+.Screen_Loading_Splash_Window_Icon{
+    height: 75px;
+    position: absolute;
+    opacity: 0%;
+}
+.Screen_Loading_Splash_Text{
+    margin-bottom: 50px;
+}
+.Screen_Loading_Splash_Text_Title{
+    font-family: var(--Text-Font-Primary);
+    color: var(--Text-Color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.Screen_Loading_Splash_Text_Page{
+    font-family: var(--Text-Font-Secondary);
+    color: var(--Text-Color);
+    text-align: center;
+    width: auto;
+}
+
+.Screen_Loading_Splash_Copyright{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.Screen_Loading_Splash_Copyright_Icon{
+    height: 30px;
+}
+
+.Screen_Loading_Splash_Copyright_Text{
+    font-family: var(--Text-Font-Primary);
+    color: var(--Text-Color);
+}
